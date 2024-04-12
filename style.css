@@ -21,6 +21,9 @@ Please note that this also includes PC as well.
 
 pc:PROPERTY_B -> PROPERTY_A will be used when the viewport size is >= PC size.
 
+Currently, only width, height, flex/hidden, and font size properties
+are capable of using this feature
+
 
 5. At any point, if you get stuck or need help, please FEEL FREE to contact me.
 As I understand and empathize your difficulty or reading someone else code ;-;

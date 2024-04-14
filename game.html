@@ -51,8 +51,12 @@
                         </div>
                         <div class="flex flex-row width-full height-full gap-5">
                             <div class="flex width-18 height-18 background-gray full-rounded-bg margin-top-3">
+                                <img id="avatar-mobile" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" >
                             </div>
-                            <p id="usertext-mobile" class="text-base weight-500 margin-top-5">username</p>
+                            <div class="flex flex-col width-fit height-fit">
+                                <p id="usertext-mobile" class="text-base weight-500 margin-top-5">username</p>
+                                <p class="text-base weight-500 margin-top-1">Score</p>
+                            </div>
 
                         </div>
                     </div>
@@ -72,8 +76,12 @@
 
                 <div class="flex flex-row width-full height-full gap-5">
                     <div id="profile-table" class="flex width-18 height-18 background-gray full-rounded-bg margin-top-3">
+                        <img id="avatar-pc" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" >
                     </div>
-                    <p id="usertext-pc" class="text-base weight-500 margin-top-5">username</p>
+                    <div class="flex flex-col width-fit height-fit">
+                        <p id="usertext-pc" class="text-base weight-500 margin-top-5">username</p>
+                        <p class="text-base weight-500 margin-top-1">Score</p>
+                    </div>
                 </div>
 
             </div> 
@@ -96,6 +104,12 @@
         userLabelPC.innerHTML = getUserBoard();
         userLabelMobile.innerHTML = getUserBoard();
 
+        const avatarPC = document.getElementById("avatar-pc");
+        const avatarMobile = document.getElementById("avatar-mobile");
+
+        avatarPC.src = getUserAvatarBoard();
+        avatarMobile.src = getUserAvatarBoard();
+
 
         // usernameLabel.innerHTML = username;
 
@@ -112,3 +126,11 @@
 
 </body>
 </html>
+
+
+<!-- const avatarPC = document.getElementById("avatar-pc");
+        const avatarMobile = document.getElementById("avatar-mobile");
+
+        avatarPC.src = getUserAvatarBoard();
+        avatarMobile.src = getUserAvatarBoard(); -->
+<!-- <img id="avatar-pc" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" > -->

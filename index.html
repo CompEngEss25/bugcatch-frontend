@@ -42,21 +42,21 @@
                     <p class="text-sm weight-500">Pick your avatar</p>
 
                     <div id="container" class="flex flex-wrap flex-row width-100 tablet:width-120 height-fit tablet:height-fit justify-center gap-1 padding-all-2" >
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(1),setUserBoard()>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(1),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(2)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(2),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(3)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(3),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(4)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(4),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(5)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(5),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(6)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(6),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(7)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(7),handleDivClick(this)>
                         </div>
-                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(8)>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(8),handleDivClick(this)>
                         </div>
                     </div>
 
@@ -70,9 +70,7 @@
             </div> 
             
             <div onClick="handlePlayClick()" id="play-button" class="flex flex-col width-60 tablet:width-fit height-20 tablet:height-40 background-white margin-top-3 rounded-bg border shadow padding-all-3 items-center justify-center background-orange">
-                <!-- <a href="game.html" class="">
-                    <p class="text-xxl weight-500">Start playing</p>
-                </a> -->
+                <p class="text-xxl weight-500">Start playing</p>
             </div>
 
         </div>    
@@ -118,8 +116,6 @@
             // container.addEventListener('click', handleDivClick);
 
             // import setUserBoard from "script/main.js";
-
-
             
             //  const playButton = document.getElementById("play-button");
             //  playButton.addEventListener('click', setUserBoard());

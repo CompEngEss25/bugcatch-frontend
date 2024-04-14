@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bug Catch</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="script/main.js"></script>
 </head>
 <body>
 
@@ -68,48 +69,62 @@
             
             </div> 
             
-            <div class="flex flex-col width-60 tablet:width-fit height-20 tablet:height-40 background-white margin-top-3 rounded-bg border shadow padding-all-3 items-center justify-center background-orange">
-                <a href="game.html" class="">
+            <div onClick="handlePlayClick()" id="play-button" class="flex flex-col width-60 tablet:width-fit height-20 tablet:height-40 background-white margin-top-3 rounded-bg border shadow padding-all-3 items-center justify-center background-orange">
+                <!-- <a href="game.html" class="">
                     <p class="text-xxl weight-500">Start playing</p>
-                </a>
+                </a> -->
             </div>
 
         </div>    
     
     
         <script>
-            let avatarPick = 0;
-            let currentActiveDiv = null;
+
+            function handlePlayClick(){
+                const userText = document.getElementById("username-input");
+                setUserBoard(userText.value);
+                window.location.href = "game.html";
+            }
+            // let avatarPick = 0;
+            // let currentActiveDiv = null;
 
 
-            function setUserBoard(){
-            // C.) FILL CODE
-            let username = document.getElementById("username-input").value;
-            console.log(username)
-            let profileTable = document.getElementById("profile-table");
-            profileTable.insertCol(username);
-            }
+            // function setUserBoard(){
+            // // C.) FILL CODE
+            // let username = document.getElementById("username-input").value;
+            // console.log(username)
+            // let profileTable = document.getElementById("profile-table");
+            // profileTable.insertCol(username);
+            // }
+            // function setAvatar(i){
+            //     avatarPick = i;
+            //     console.log("pick avatar "+i)
+            // }
     
-            function setAvatar(i){
-                avatarPick = i;
-                console.log("pick avatar "+i)
-            }
+            // function handleDivClick(event){
+            //     const ClickedDiv = event.target;
+            //     if(ClickedDiv == container){
+            //         return;
+            //     }
+            //     if(currentActiveDiv !== null){
+            //         currentActiveDiv.style.backgroundColor = '';
+            //     }
+            //     currentActiveDiv = ClickedDiv;
+            //     currentActiveDiv.style.backgroundColor = 'red';
+            //     console("clicked");
+            // }
     
-            function handleDivClick(event){
-                const ClickedDiv = event.target;
-                if(ClickedDiv == container){
-                    return;
-                }
-                if(currentActiveDiv !== null){
-                    currentActiveDiv.style.backgroundColor = '';
-                }
-                currentActiveDiv = ClickedDiv;
-                currentActiveDiv.style.backgroundColor = 'red';
-                console("clicked");
-            }
-    
-            const container = document.getElementById("container");
-            container.addEventListener('click', handleDivClick);
+            // const container = document.getElementById("container");
+            // container.addEventListener('click', handleDivClick);
+
+            // import setUserBoard from "script/main.js";
+
+
+            
+            //  const playButton = document.getElementById("play-button");
+            //  playButton.addEventListener('click', setUserBoard());
+            // setUserBoard();
+                
         </script>
 
     </main>

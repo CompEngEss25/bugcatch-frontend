@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bug Catch</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="script/main.js"></script>
 </head>
 <body>
 
@@ -31,7 +32,7 @@
                     </a>
                     <!-- Phaser -->
                     <div id="gameContainer"></div>
-                    <script src="game.js"></script>
+                    <!-- <script src="game.js"></script> -->
                 
                 </div>
                 
@@ -51,7 +52,8 @@
                         <div class="flex flex-row width-full height-full gap-5">
                             <div class="flex width-18 height-18 background-gray full-rounded-bg margin-top-3">
                             </div>
-                            <p class="text-base weight-500 margin-top-5">username</p>
+                            <p id="usertext-mobile" class="text-base weight-500 margin-top-5">username</p>
+
                         </div>
                     </div>
                 </div>
@@ -71,7 +73,7 @@
                 <div class="flex flex-row width-full height-full gap-5">
                     <div id="profile-table" class="flex width-18 height-18 background-gray full-rounded-bg margin-top-3">
                     </div>
-                    <p class="text-base weight-500 margin-top-5">username</p>
+                    <p id="usertext-pc" class="text-base weight-500 margin-top-5">username</p>
                 </div>
 
             </div> 
@@ -88,15 +90,24 @@
     </main>
 
     <script>
-        function setUserBoard(){
-            // C.) FILL CODE
-            let username = document.getElementById("username-input").value;
-            console.log(username)
-            let profileTable = document.getElementById("profile-table");
-            profileTable.insertCol(username);
-            }
+        const userLabelPC = document.getElementById("usertext-pc");
+        const userLabelMobile = document.getElementById("usertext-mobile");
 
-        document.addEventListener("DOMContentLoaded", setUserBoard)
+        userLabelPC.innerHTML = getUserBoard();
+        userLabelMobile.innerHTML = getUserBoard();
+
+
+        // usernameLabel.innerHTML = username;
+
+        // function setUserBoard(){
+        //     // C.) FILL CODE
+        //     let username = document.getElementById("username-input").value;
+        //     console.log(username)
+        //     let profileTable = document.getElementById("profile-table");
+        //     profileTable.insertCol(username);
+        //     }
+
+        // document.addEventListener("DOMContentLoaded", setUserBoard)
     </script>
 
 </body>

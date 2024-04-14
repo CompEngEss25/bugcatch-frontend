@@ -8,33 +8,110 @@
 </head>
 <body>
 
+
     <main class="flex flex-col width-full height-full background-gray padding-all-5 items-center">
         
         
         
         <h1 class="text-black text-xxl weight-700">Bug Catch</h1>
-        <div class="flex flex-row width-full items-center justify-center gap-5">
+        <div class="flex flex-col width-full items-center justify-center gap-5">
 
 
-            <div class="flex flex-col width-80 tablet:width-180 height-80 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-                <a href="game.html" class="">
-                    <p class="text-sm weight-500">Start playing</p>
-                </a>
-                <a href="tutorial.html" class="">
-                    <p class="text-sm weight-500">Game tutorial</p>
-                </a>
-                <a href="leaderboard.html" class="">
-                    <p class="text-sm weight-500">See leaderboard</p>
-                </a>
+            <div class="flex flex-col width-100 tablet:width-180 height-fit tablet:height-fit background-white margin-top-5 rounded-bg border shadow padding-all-3">
+                
+                <div class="flex flex-row tablet:width-170 height-fit tablet:height-40 margin-top-3 rounded-bg border shadow padding-all-3 items-center margin-bottom-3 gap-1" >
+                    <div class="logo">
+                        <img src="images/bug-logo.png" alt="" width="50">
+                    </div>
+                    <div class="flex flex-col tablet:width-170 height-fit tablet:height-40 margin-top-3 rounded-bg border shadow padding-all-3 items-center">
+                        <p class="text-xxl weight-300">Welcome to BugCatch</p>
+                    </div>
+                    <div class="flex flex-col width-60 tablet:width-fit height-fit tablet:height-40 margin-top-3 rounded-bg border shadow padding-all-3 items-end">
+                        <a href="tutorial.html" class="">
+                            <p class="text-xs weight-500">Game tutorial</p>
+                        </a>
+                        <a href="leaderboard.html" class="">
+                            <p class="text-xs weight-500">See leaderboard</p>
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="flex flex-col width-full tablet:width-full height-fit tablet:height-full margin-top-3 rounded-bg border shadow items-center margin-bottom-3 gap-1">
+                    <p class="text-sm weight-500">Pick your avatar</p>
+
+                    <div id="container" class="flex flex-wrap flex-row width-100 tablet:width-120 height-fit tablet:height-fit justify-center gap-1 padding-all-2" >
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(1),setUserBoard()>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(2)>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(3)>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(4)>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(5)>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(6)>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(7)>
+                        </div>
+                        <div class="flex width-20 tablet:width-28 height-20 tablet:height-28 background-gray full-rounded-bg" onclick=setAvatar(8)>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row width-80 tablet:width-120 height-18 tablet:height-20 background-gray items-center justify-center block-display userbox-border margin-all-2">
+                        <input id="username-input" type="text" placeholder="Username" style="width: 100%; height: 100%; font-size: xx-large; text-align: center;">
+                    </div>
+                    
+                </div>
+
+            
             </div> 
             
+            <div class="flex flex-col width-60 tablet:width-fit height-20 tablet:height-40 background-white margin-top-3 rounded-bg border shadow padding-all-3 items-center justify-center background-orange">
+                <a href="game.html" class="">
+                    <p class="text-xxl weight-500">Start playing</p>
+                </a>
+            </div>
 
-        </div>
-        
+        </div>    
     
     
+        <script>
+            let avatarPick = 0;
+            let currentActiveDiv = null;
+
+
+            function setUserBoard(){
+            // C.) FILL CODE
+            let username = document.getElementById("username-input").value;
+            console.log(username)
+            let profileTable = document.getElementById("profile-table");
+            profileTable.insertCol(username);
+            }
     
+            function setAvatar(i){
+                avatarPick = i;
+                console.log("pick avatar "+i)
+            }
     
+            function handleDivClick(event){
+                const ClickedDiv = event.target;
+                if(ClickedDiv == container){
+                    return;
+                }
+                if(currentActiveDiv !== null){
+                    currentActiveDiv.style.backgroundColor = '';
+                }
+                currentActiveDiv = ClickedDiv;
+                currentActiveDiv.style.backgroundColor = 'red';
+                console("clicked");
+            }
+    
+            const container = document.getElementById("container");
+            container.addEventListener('click', handleDivClick);
+        </script>
+
     </main>
 
       

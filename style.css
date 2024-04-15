@@ -62,6 +62,26 @@ body, html {
     display: flex;
     flex-direction: column;
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: #f2f2f2;
+    border: 0px;
+    padding: 8px;
+    text-align: center;
+}
+td{
+    padding: 4px;
+    text-align: center;
+}
+#leaderboard-container tr:nth-child(even):not(:nth-child(2)),
+#leaderboard-container-mobile tr:nth-child(even):not(:nth-child(2)) {
+    background-color: #f2f2f2;
+}
+
 
 /* Phaser Game Container */
 /* Explanation: Feel free to modify*/
@@ -361,6 +381,16 @@ Feel free to add colors of your choices ;D*/
     background-color: #e2e8f0;
 }
 
+.background-gold{
+    background-color: #f6ed3c;
+}
+.background-silver{
+    background-color: #b5f8f0;
+}
+.background-bronze{
+    background-color: #e69c1e;
+
+
 .background-orange {
     background-color:darkorange;
 }
@@ -603,7 +633,7 @@ in your desired axis (x = horizontal, y = vertical) */
     overflow-x: scroll;
 }
 .scroll-y {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 

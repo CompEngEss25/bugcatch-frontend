@@ -1,4 +1,12 @@
+import { fetchAndDrawLeaderboard } from "./leaderboard.js";
 // Set pages contents
+document.addEventListener("DOMContentLoaded", () => {
+    fetchAndDrawLeaderboard()
+  });
+
+// game.html page
+export function setMiniLeaderboard(){
+
 let avatarPick = 0;
 let username = "Username";
 

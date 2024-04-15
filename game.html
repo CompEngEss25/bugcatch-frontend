@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Phaser -->
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bug Catch</title>
@@ -15,13 +15,23 @@
         
         <h1 class="text-black text-xxl weight-700">Bug Catch</h1>
         <div class="flex flex-row width-full justify-center gap-5">
-
             <!-- B.) PC leaderboard container -->
-            <div class="hidden pc:flex flex-col width-60 height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-                <p class="text-md weight-500">Leaderboard</p>
-               
+            <table class="hidden pc:flex flex-col width-60 height-80 background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y" id = "leaderboard-table">
+                <thead>
+                    <tr>
+                        <th class="text-md weight-500 " colspan="3">Leaderboard</th>
+                    </tr>
+                    <tr>
+                        <th class="text-md weight-500" style="width: 10%;">rank</th>
+                        <th class="text-md weight-500" style="width: 45%;">name</th>
+                        <th class="text-md weight-500" style="width: 45%;">score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-container">
+
+                </tbody>
             
-            </div>
+            </table>
 
             <div class="flex flex-col width-80 tablet:width-180">
                 <!-- A.) All devices game container -->
@@ -39,10 +49,21 @@
 
                 <div class="flex pc:hidden flex-row width-80 tablet:width-180 gap-5">
                     <!-- B.) Mobile & Tablet leaderboard container -->
-                    <div class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-                        <p class="text-md weight-500">Leaderboard</p>
-                
-                    </div>
+                    <table class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y" id = "leaderboard-table-mobile">
+                        <thead>
+                            <tr>
+                                <th class="text-md weight-500 " colspan="3">Leaderboard</th>
+                            </tr>
+                            <tr>
+                                <th class="text-md weight-500" style="width: 10%;">rank</th>
+                                <th class="text-md weight-500" style="width: 45%;">name</th>
+                                <th class="text-md weight-500" style="width: 45%;">score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-container-mobile">
+        
+                        </tbody> 
+                    </table>
                     <!-- C.) Mobile & Tablet userinfo container -->
                     <div class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
                         <div class="flex flex-row width-full height-full gap-5">

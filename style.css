@@ -77,6 +77,10 @@ body, html {
     width: 2.5rem;
 }
 
+.width-16 {
+    width: 4rem;
+}
+
 .width-18 {
     width: 4.5rem;
 }
@@ -146,6 +150,10 @@ body, html {
 
 .height-10 {
     height: 2.5rem;
+}
+
+.height-16 {
+    height: 4rem;
 }
 
 .height-18 {
@@ -470,7 +478,18 @@ Please don't add/modify this section to maintain consistency _/\_ */
 /* Explanation: Text size breakpoints */
 
 
-
+/* TEXT ALIGNMENT */
+.text-left {
+    text-align: left;
+  }
+  
+.text-center {
+    text-align: center;
+}
+  
+.text-right {
+    text-align: right;
+}
 
 
 /* MARGIN & PADDING */
@@ -534,6 +553,16 @@ PADDING is the INNER space of an element. You can add new sizes of your choices 
 
 .padding-top-5 {
     padding-top: 1.25rem;
+}
+
+.padding-y-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.padding-x-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 

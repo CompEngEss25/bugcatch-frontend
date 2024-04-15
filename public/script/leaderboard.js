@@ -55,16 +55,56 @@ function drawLeaderBoard(players){
             rowDesktop.appendChild(score.cloneNode(true));
 
             // Append rows to leaderboards
+            var n = players.indexOf(player) + 1;
+            switch(n) {
+              case 1:
+                // Condition for rank 1
+                rowDesktop.classList.add("background-gold")
+                rowMobile.classList.add("background-gold")
+                break;
+              case 2:
+                // Condition for rank 2
+                rowDesktop.classList.add("background-silver")
+                rowMobile.classList.add("background-silver")
+                break;
+              case 3:
+                // Condition for rank 3
+                rowDesktop.classList.add("background-bronze")
+                rowMobile.classList.add("background-bronze")
+                break;
+              default:
+                // other rank
+                break
+            }
             leaderBoardMobile.appendChild(rowMobile);
             leaderBoard.appendChild(rowDesktop);
         }
     }else{
         for(const player of players){
             var user = document.createElement("div")
-            for(const _class of "flex width-80 height-20 background-gray rounded-bg items-center".split(' '))
+            for(const _class of "flex width-80 height-20 rounded-bg items-center".split(' '))
                 user.classList.add(_class)
             user.classList.add("justify-center")
+            var n = players.indexOf(player) + 1;
+            switch(n) {
+              case 1:
+                // Condition for rank 1
+                user.classList.add("background-gold")
+                break;
+              case 2:
+                // Condition for rank 2
+                user.classList.add("background-silver")
+                break;
+              case 3:
+                // Condition for rank 3
+                user.classList.add("background-bronze")
+                break;
+              default:
+                // other rank
+                user.classList.add("background-gray")
+            }
             user.textContent = (players.indexOf(player)+1)+ ". " + player.name + " " + player.score
+            user.style.fontWeight = 'bold'
             leaderBoard.appendChild(user)
         }
     }

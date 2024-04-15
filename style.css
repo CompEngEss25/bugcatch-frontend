@@ -97,8 +97,20 @@ td{
     width: 2.5rem;
 }
 
+.width-16 {
+    width: 4rem;
+}
+
+.width-18 {
+    width: 4.5rem;
+}
+
 .width-20 {
     width: 5rem;
+}
+
+.width-28{
+    width: 7rem;
 }
 
 .width-40 {
@@ -121,6 +133,10 @@ td{
     width: 30rem;
 }
 
+.width-160{
+    width: 40rem;
+}
+
 .width-fit {
     width: fit-content;
 }
@@ -135,6 +151,14 @@ td{
     .tablet\:width-180 {
         width: 45rem;
     }
+
+    .tablet\:width-120 {
+        width: 30rem;
+    }
+
+    .tablet\:width-28{
+        width: 7rem;
+    }
 }
 /* Explanation: Breakpoint of the width (Feel free to add/modify) */
 
@@ -148,12 +172,28 @@ td{
     height: 2.5rem;
 }
 
+.height-16 {
+    height: 4rem;
+}
+
+.height-18 {
+    height: 4.5rem;
+}
+
 .height-20 {
     height: 5rem;
 }
 
+.height-28 {
+    height: 7rem;
+}
+
 .height-40 {
     height: 10rem;
+}
+
+.height-60 {
+    height: 15rem;
 }
 
 .height-80 {
@@ -182,6 +222,18 @@ td{
 @media (min-width: 768px) {
     .tablet\:height-120 {
         height: 40rem;
+    }
+
+    .tablet\:height-28{
+        height: 7rem;
+    }
+
+    .tablet\:height-20{
+        height: 5rem;
+    }
+
+    .tablet\:height-fit{
+        height: fit-content;
     }
 }
 /* Explanation: Breakpoint of the height (Feel free to add/modify) */
@@ -328,6 +380,7 @@ Feel free to add colors of your choices ;D*/
 .background-gray {
     background-color: #e2e8f0;
 }
+
 .background-gold{
     background-color: #f6ed3c;
 }
@@ -336,6 +389,10 @@ Feel free to add colors of your choices ;D*/
 }
 .background-bronze{
     background-color: #e69c1e;
+
+
+.background-orange {
+    background-color:darkorange;
 }
 
 /* TEXT COLOR */
@@ -451,7 +508,18 @@ Please don't add/modify this section to maintain consistency _/\_ */
 /* Explanation: Text size breakpoints */
 
 
-
+/* TEXT ALIGNMENT */
+.text-left {
+    text-align: left;
+  }
+  
+.text-center {
+    text-align: center;
+}
+  
+.text-right {
+    text-align: right;
+}
 
 
 /* MARGIN & PADDING */
@@ -478,6 +546,14 @@ PADDING is the INNER space of an element. You can add new sizes of your choices 
     margin-bottom: 1.25rem;
     margin-left: 1.25rem;
     margin-right: 1.25rem;
+}
+
+.margin-bottom-3{
+    margin-bottom: 0.75rem;
+}
+
+.margin-top-3 {
+    margin-top: 0.75rem;
 }
 
 .margin-top-5 {
@@ -507,6 +583,16 @@ PADDING is the INNER space of an element. You can add new sizes of your choices 
 
 .padding-top-5 {
     padding-top: 1.25rem;
+}
+
+.padding-y-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.padding-x-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 
@@ -567,4 +653,12 @@ are placed on top of the others. This is quite similar to "Send to Top" on Power
 
 
 
+
+.block-display{
+    display: block;
+}
+
+.userbox-border{
+    border: 1px solid rgba(0, 0, 0, 2);
+}
 

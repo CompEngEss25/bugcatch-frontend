@@ -547,7 +547,7 @@ in your desired axis (x = horizontal, y = vertical) */
     overflow-x: scroll;
 }
 .scroll-y {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Phaser -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bug Catch</title>
@@ -39,14 +39,15 @@
 
             <div class="flex flex-col width-80 tablet:width-180">
                 <!-- A.) All devices game container -->
-                <div class="flex width-full height-80 tablet:height-120 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-                
-                    <a href="index.html" class="">
-                        <p class="text-sm weight-500">After game end</p>
-                    </a>
+                <div id="game" class="relative flex width-full height-80 tablet:height-120 background-white margin-top-5 rounded-bg border shadow padding-all-3">
+                    <div class="flex flex-row gap-3">
+                        <p id="time-label" class="text-lg weight-300">Time: 120</p>
+                        <p id="score-label" class="text-lg weight-300">Score: 0</p>
+                    </div>
+                    
                     <!-- Phaser -->
-                    <div id="gameContainer"></div>
-                    <!-- <script src="game.js"></script> -->
+                    <!-- <div id="gameContainer"></div>
+                    <script src="script/game.js"></script> -->
                 
                 </div>
                 
@@ -69,14 +70,14 @@
                         </tbody> 
                     </table>
                     <!-- C.) Mobile & Tablet userinfo container -->
-                    <div class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-                        <div class="flex flex-row width-full height-full gap-5">
-                            <div class="flex width-18 height-18 background-gray full-rounded-bg margin-top-3">
+                    <div class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-2">
+                        <div class="flex flex-row width-full height-full gap-1">
+                            <div class="flex width-16 height-16 background-white full-rounded-bg margin-top-3">
                                 <img id="avatar-mobile" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" >
                             </div>
                             <div class="flex flex-col width-fit height-fit">
-                                <p id="usertext-mobile" class="text-base weight-500 margin-top-5">username</p>
-                                <p class="text-base weight-500 margin-top-1">Score</p>
+                                <p id="usertext-mobile" class="text-sm weight-500 margin-top-5">username</p>
+                                <p id="highscore-label-mobile" class="text-xs weight-500 margin-top-1">Best: 0</p>
                             </div>
 
                         </div>
@@ -91,13 +92,13 @@
             <!-- C.) PC userinfo container -->
             <div class="hidden pc:flex flex-col width-60 height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
 
-                <div class="flex flex-row width-full height-full gap-5">
-                    <div id="profile-table" class="flex width-18 height-18 background-gray full-rounded-bg margin-top-3">
+                <div class="flex flex-row width-full height-full gap-1">
+                    <div id="profile-table" class="flex width-18 height-18 background-white full-rounded-bg margin-top-3">
                         <img id="avatar-pc" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" >
                     </div>
                     <div class="flex flex-col width-fit height-fit">
                         <p id="usertext-pc" class="text-base weight-500 margin-top-5">username</p>
-                        <p class="text-base weight-500 margin-top-1">Score</p>
+                        <p id="highscore-label-pc" class="text-base weight-500 margin-top-1">Best: 0</p>
                     </div>
                 </div>
 
@@ -117,23 +118,35 @@
     <script type="module">
 
 
-        import { getUsername, getCurrentAvatarImg } from "/script/main.js";
+        import { getUsername, getCurrentAvatarImg, getHighScore} from "/script/main.js";
+        import { startGame } from "/script/game.js";
+
         window.getUsername = getUsername;
         window.getCurrentAvatarImg = getCurrentAvatarImg;
+        window.startGame = startGame;
+        window.getHighScore = getHighScore;
+
 
         
 
         const userLabelPC = document.getElementById("usertext-pc");
         const userLabelMobile = document.getElementById("usertext-mobile");
+        const highScoreLabelMobile = document.getElementById("highscore-label-mobile");
+        const highScoreLabelPC = document.getElementById("highscore-label-pc");
 
         userLabelPC.innerHTML = getUsername();
         userLabelMobile.innerHTML = getUsername();
+        highScoreLabelMobile.innerHTML = "Best: " + getHighScore();
+        highScoreLabelPC.innerHTML = "Best: " + getHighScore();
+
 
         const avatarPC = document.getElementById("avatar-pc");
         const avatarMobile = document.getElementById("avatar-mobile");
-
+        console.log(getCurrentAvatarImg());
         avatarPC.src = getCurrentAvatarImg();
         avatarMobile.src = getCurrentAvatarImg();
+
+        startGame();
 
     </script>
 

@@ -1,7 +1,9 @@
 import { fetchAndDrawLeaderboard } from "./leaderboard.js";
-document.addEventListener("DOMContentLoaded", () => {
-    fetchAndDrawLeaderboard()
-});
+import {createNewPlayer, getPlayerByName, createNewResult, getLeaderboard, setNewHighScore, setNewAvatar} from "./apiconnect.js";
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     fetchAndDrawLeaderboard()
+// });
 
 // Fields
 
@@ -27,28 +29,40 @@ export function setAvatarId(id){
     sessionStorage.setItem('avatarId', id);
 }
 
+export function getHighScore(){
+    var score = sessionStorage.getItem('highScore');
+    return score;
+}
+export function setHighScore(score){
+    sessionStorage.setItem('highScore', score);
+}
+
 export function getCurrentAvatarImg(){
-    switch (getAvatarId()){
-        case 1: return "images/bug-logo.png";
-        case 2: return "images/bug-logo.png";
-        case 3: return "images/bug-logo.png";
-        case 4: return "images/bug-logo.png";
-        case 5: return "images/bug-logo.png";
-        case 6: return "images/bug-logo.png";
-        case 7: return "images/bug-logo.png";
-        case 8: return "images/bug-logo.png";
-        default:
-            return "images/bug-logo.png";
-    }
+    console.log(getAvatarId());
+    return "images/avatars/" + getAvatarId()+ ".png";
 }
 
 // index.html handlers
 
-export function handlePlayClick(){
-    const userText = document.getElementById("username-input");
-    setUsername(userText.value);
+export async function handlePlayClick(){
+    const username = document.getElementById("username-input").value;
+    setUsername(username);
+
+    const player = await getPlayerByName(username);
+    if (player.length == 0){
+        // New player
+        await createNewPlayer(username, getAvatarId())
+        setHighScore(0);
+    }
+    else {
+        // Old player
+        await setNewAvatar(username, getAvatarId());
+        setHighScore(player[0].highestScore)
+    }
     window.location.href = "game.html";
+    
 }
+
 
 export function initSelectedAvatar(){
     if (getAvatarId()){
@@ -63,12 +77,17 @@ export function initSelectedAvatar(){
 
 export function handleDivClick(ClickedDiv){
     const avatarId = (ClickedDiv.id).slice(7);
+    console.log(avatarId)
     setAvatarId(avatarId);
     if(currentActiveDiv !== null){
-        currentActiveDiv.style.backgroundColor = '';
+        // currentActiveDiv.style.backgroundColor = '';
+        currentActiveDiv.classList.remove("opacity-100");
+        currentActiveDiv.classList.add("opacity-25");
     }
     currentActiveDiv = ClickedDiv;
-    currentActiveDiv.style.backgroundColor = 'red';
+    // currentActiveDiv.style.backgroundColor = 'red';
+    currentActiveDiv.classList.remove("opacity-25");
+    currentActiveDiv.classList.add("opacity-100");
 }
 
 

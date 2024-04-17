@@ -45,21 +45,29 @@ export function getCurrentAvatarImg(){
 // index.html handlers
 
 export async function handlePlayClick(){
-    const username = document.getElementById("username-input").value;
-    setUsername(username);
-
-    const player = await getPlayerByName(username);
-    if (player.length == 0){
-        // New player
-        await createNewPlayer(username, getAvatarId())
-        setHighScore(0);
+    let username = document.getElementById("username-input").value;
+    username = username.trim()
+    if (username == ""){
+        alert("Please enter your username");
     }
     else {
-        // Old player
-        await setNewAvatar(username, getAvatarId());
-        setHighScore(player[0].highestScore)
+        setUsername(username);
+
+        const player = await getPlayerByName(username);
+        if (player.length == 0){
+            // New player
+            await createNewPlayer(username, getAvatarId())
+            setHighScore(0);
+        }
+        else {
+            // Old player
+            await setNewAvatar(username, getAvatarId());
+            setHighScore(player[0].highestScore)
+        }
+        window.location.href = "game.html";
+
     }
-    window.location.href = "game.html";
+    
     
 }
 

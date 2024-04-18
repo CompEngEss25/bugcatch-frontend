@@ -5,9 +5,12 @@
 // A.) FILL CODE
 
 //for responsive
+let e = document.getElementById('gameContainer').getBoundingClientRect();
+console.log(e.width)
+console.log(e.height)
 var sizes = {
-    width: 500,
-    height: 500
+    width: e.width,
+    height: e.height
 }
 
 // create gameScene
@@ -26,6 +29,12 @@ let config = {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
+    callbacks: {
+        postBoot: function (game) {
+          game.canvas.style.width = '100%';
+          game.canvas.style.height = '100%';
+        }
+      },
     backgroundColor: '#e2e8ff' // color of scene background
 }
 
@@ -265,14 +274,14 @@ function create() {
 
     //set the score text----------------------------------------------------------------
     this.scoreTxt = this.add.text(0.7*sizes.width, 10, 'Score : 0', {
-        font: '20px Arial',
+        font: `${sizes.height*0.03}px Arial`,
         fill: '#000000'
     });
 
 
     //set the timer of the game---------------------------------------------------------
     this.timerTxt = this.add.text(0.7*sizes.width, 35, `Time : 200`, {
-        font: '20px Arial',
+        font: `${sizes.height*0.03}px Arial`,
         fill: '#000000'
     });
 
@@ -327,6 +336,7 @@ function create() {
 
 
 function update() {
+    //for moving item
     checkBugNearEdge(gameScene.bug1);
     checkBugNearEdge(gameScene.bug2);
 
@@ -336,6 +346,7 @@ function update() {
         gameScene.bug2.setPosition(gameScene.bug2.x + (Math.cos((gameScene.bug2.angle-90)*Math.PI/180)*speed), gameScene.bug2.y + (Math.sin((gameScene.bug2.angle-90)*Math.PI/180)*speed))
     }
     
+    //for spawn item
     if (tim < 110 && mode === 0){
         fc += 1;
         if (fc > 180){
@@ -346,12 +357,20 @@ function update() {
             }
         }
     }
+
+    //higher score, bug stay less time
     if (mode === 0){
-        if (b1fc > 300) {
+        let t = 300;
+        if (score > 4000) t = 180;
+        else if (score > 3000) t = 210;
+        else if (score > 2000) t = 240;
+        else if (score > 1000) t = 270;
+
+        if (b1fc > t) {
             relocate(gameScene.bug1);
             b1fc = 0;
         }
-        if (b2fc > 300) {
+        if (b2fc > t) {
             relocate(gameScene.bug2);
             b2fc = 0;
         }
@@ -359,6 +378,13 @@ function update() {
         b1fc += 1;
         b2fc += 1;
     }
+
+    //for responsive
+    /*(function() {
+        const gameId = document.getElementById("gameContainer"); // Target div that wraps the phaser game
+        gameId.style.width = '100%'; // set width to 100%
+        gameId.style.height = '100%'; // set height to 100%
+    })(); // run function*/
 }
 
 

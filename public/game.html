@@ -40,15 +40,14 @@
             <div class="flex flex-col width-80 tablet:width-180">
                 <!-- A.) All devices game container -->
                 <div id="game" class="relative flex width-full height-80 tablet:height-120 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-                    <div class="flex flex-row gap-3">
+                    <!-- <div class="flex flex-row gap-3">
                         <p id="time-label" class="text-lg weight-300">Time: 120</p>
                         <p id="score-label" class="text-lg weight-300">Score: 0</p>
-                    </div>
+                    </div> -->
                     
-                    <!-- Phaser -->
-                    <!-- <div id="gameContainer"></div>
-                    <script src="script/game.js"></script> -->
-                
+                    <div id="gameContainer" class=""></div>
+                    <script type="module" src="script/game.js"></script>
+                    
                 </div>
                 
 
@@ -119,11 +118,11 @@
 
 
         import { getUsername, getCurrentAvatarImg, getHighScore} from "/script/main.js";
-        import { startGame } from "/script/game.js";
+        // import { startGame } from "/script/game.js";
 
         window.getUsername = getUsername;
         window.getCurrentAvatarImg = getCurrentAvatarImg;
-        window.startGame = startGame;
+        // window.startGame = startGame;
         window.getHighScore = getHighScore;
 
 
@@ -146,7 +145,7 @@
         avatarPC.src = getCurrentAvatarImg();
         avatarMobile.src = getCurrentAvatarImg();
 
-        startGame();
+        // startGame();
 
     </script>
 

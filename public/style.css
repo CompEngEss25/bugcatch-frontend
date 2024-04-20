@@ -44,6 +44,11 @@ GOOD LUCK !
 
 
 /* CSS RESET for the sake of simplicity (You don't have to understand this) */
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
 
 * {
     padding: 0px;
@@ -409,6 +414,9 @@ put in order from top to bottom */
 }
 /* Explanation: Alignment of the main axis is set to be bottom-aligned / right-aligned */
 
+.justify-between {
+    justify-content: space-between;
+}
 
 .items-center {
     -webkit-box-align: center;

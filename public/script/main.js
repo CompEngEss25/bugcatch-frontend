@@ -1,4 +1,4 @@
-import { fetchAndDrawLeaderboard } from "./leaderboard.js";
+
 import {createNewPlayer, getPlayerByName, createNewResult, getLeaderboard, setNewHighScore, setNewAvatar} from "./apiconnect.js";
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -98,7 +98,83 @@ export function handleDivClick(ClickedDiv){
     currentActiveDiv.classList.add("opacity-100");
 }
 
+export async function fetchAndDrawLeaderboard(){
+    console.log("fetch")
+    const players = await getLeaderboard()
+    console.log(players)
+    drawLeaderBoard(players)
+}
+/**@param {Player[]} players */
+function drawLeaderBoard(players){
+    // Get the current path
+    const path = document.location.pathname; // or window.location.pathname
 
+    // Split the path by '/'
+    const pathParts = path.split('/');
+
+    // Get the last part of the path, which should be the filename
+    const filename = pathParts[pathParts.length - 1];
+    if(filename == "game.html"){
+       let topPlayerName = document.querySelectorAll(".top-player-name")
+       let topPlayerScore = document.querySelectorAll(".top-player-score")
+       for(let i = 0;i<6;i++){
+        topPlayerName[i].textContent = players[i%3].name
+        topPlayerScore[i].textContent = players[i%3].highestScore
+       }
+    }else{
+        let leaderBoard = document.getElementById("leaderboard-container")
+        players.forEach(player=>{
+            //create container for top player
+            let box = document.createElement("div")
+            box.classList.add("flex",    "flex-row",    "gap-3",    "width-full",    "items-center",    "height-20",    "background-gray",    "rounded-bg",    "padding-all-2")
+            //create rank container
+            let rankBox = document.createElement("div")
+            rankBox.classList.add("flex",    "height-16",    "width-16",  "full-rounded-bg",    "items-center",    "justify-center")
+            let n = players.indexOf(player)+1
+            switch (n) {
+                case 1:
+                    rankBox.classList.add("background-gold");
+                    break;
+                case 2:
+                    rankBox.classList.add("background-silver");
+                    break;
+                case 3:
+                    rankBox.classList.add("background-bronze");
+                    break;
+                default:
+                    rankBox.classList.add("background-white")
+                    break;
+            }
+            //create rank number
+            let rankNumber = document.createElement("p")
+            rankNumber.classList.add("weight-700",    "text-black",    "text-xxl")
+            rankNumber.textContent = n
+            //merge with rank box
+            rankBox.appendChild(rankNumber)
+            //create info box
+            let infoBox = document.createElement("div")
+            infoBox.classList.add("flex","flex-col")
+            //create top player name text
+            let playerName = document.createElement("p")
+            playerName.classList.add("text-lg","weight-500")
+            playerName.textContent = player.name
+            //create top plater score text
+            let playerScore = document.createElement("p")
+            playerScore.classList.add("text-sm","weight-300")
+            playerScore.textContent = player.highestScore
+            //merge with infoBox
+            infoBox.appendChild(playerName)
+            infoBox.appendChild(playerScore)
+            //merge all to box
+            box.appendChild(rankBox)
+            box.appendChild(infoBox)
+            //merge to leaderboard-container
+            leaderBoard.appendChild(box)
+        })
+        
+
+    }
+}
 
 
 

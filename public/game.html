@@ -20,7 +20,42 @@
         <h1 class="text-black text-xxl weight-700">Bug Catch</h1>
         <div class="flex flex-row width-full justify-center gap-5">
             <!-- B.) PC leaderboard container -->
-            <table class="hidden pc:flex flex-col width-60 height-80 background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y" id = "leaderboard-table">
+            <div class="hidden pc:flex gap-2 flex-col width-60 height-fit background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y">
+                <div class="width-full">
+                    <p class="text-sm weight-500">Top players</p>
+                </div>
+                <div class="flex flex-row gap-3 width-full items-center height-20 background-gray rounded-bg padding-all-2">
+                    <div class="flex height-16 width-16 background-gold full-rounded-bg items-center justify-center">
+                        <p class="weight-700 text-black text-xxl">1</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-lg weight-500">Tontoey</p>
+                        <p class="text-sm weight-300">5000</p>
+                    </div>
+                </div>
+                <div class="flex flex-row gap-3 width-full items-center height-20 background-gray rounded-bg padding-all-2">
+                    <div class="flex height-16 width-16 background-silver full-rounded-bg items-center justify-center">
+                        <p class="weight-700 text-black text-xxl">2</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-lg weight-500">Del</p>
+                        <p class="text-sm weight-300">3000</p>
+                    </div>
+                </div>
+                <div class="flex flex-row gap-3 width-full items-center height-20 background-gray rounded-bg padding-all-2">
+                    <div class="flex height-16 width-16 background-bronze full-rounded-bg items-center justify-center">
+                        <p class="weight-700 text-black text-xxl">3</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-lg weight-500">Krit</p>
+                        <p class="text-sm weight-300">1000</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- <table class="hidden pc:flex flex-col width-60 height-80 background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y" id = "leaderboard-table">
                 <thead>
                     <tr>
                         <th class="text-md weight-500 " colspan="3">Leaderboard</th>
@@ -35,7 +70,7 @@
 
                 </tbody>
             
-            </table>
+            </table> -->
 
             <div class="flex flex-col width-80 tablet:width-180">
                 <!-- A.) All devices game container -->
@@ -53,7 +88,42 @@
 
                 <div class="flex pc:hidden flex-row width-80 tablet:width-180 gap-5">
                     <!-- B.) Mobile & Tablet leaderboard container -->
-                    <table class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y" id = "leaderboard-table-mobile">
+                    <div class="flex flex-col gap-2 width-full height-fit tablet:height-fit background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y">
+                        <div class="width-full">
+                            <p class="text-sm weight-500">Top Players</p>
+                        </div>
+                        <div class="flex flex-row gap-3 width-full items-center height-fit background-gray rounded-bg padding-all-2">
+                            <div class="flex height-8 width-8 background-gold full-rounded-bg items-center justify-center">
+                                <p class="weight-700 text-black text-lg">1</p>
+                            </div>
+                            <div class="flex flex-row flex-wrap gap-1">
+                                <p class="text-sm weight-500">Tontoey</p>
+                                <p class="text-sm weight-300">5000</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-3 width-full items-center height-fit background-gray rounded-bg padding-all-2">
+                            <div class="flex height-8 width-8 background-silver full-rounded-bg items-center justify-center">
+                                <p class="weight-700 text-black text-lg">2</p>
+                            </div>
+                            <div class="flex flex-row flex-wrap gap-1">
+                                <p class="text-sm weight-500">Tontoey</p>
+                                <p class="text-sm weight-300">5000</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-3 width-full items-center height-fit background-gray rounded-bg padding-all-2">
+                            <div class="flex height-8 width-8 background-bronze full-rounded-bg items-center justify-center">
+                                <p class="weight-700 text-black text-lg">3</p>
+                            </div>
+                            <div class="flex flex-row flex-wrap gap-1">
+                                <p class="text-sm weight-500">Tontoey</p>
+                                <p class="text-sm weight-300">5000</p>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                    
+                    <!-- <table class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3 scroll-y" id = "leaderboard-table-mobile">
                         <thead>
                             <tr>
                                 <th class="text-md weight-500 " colspan="3">Leaderboard</th>
@@ -67,9 +137,12 @@
                         <tbody id="leaderboard-container-mobile">
         
                         </tbody> 
-                    </table>
+                    </table> -->
                     <!-- C.) Mobile & Tablet userinfo container -->
                     <div class="flex flex-col width-full height-40 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-2">
+                        <div class="width-full">
+                            <p class="text-sm weight-500">Me</p>
+                        </div>
                         <div class="flex flex-row width-full height-full gap-1">
                             <div class="flex width-16 height-16 background-white full-rounded-bg margin-top-3">
                                 <img id="avatar-mobile" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" >
@@ -90,7 +163,9 @@
 
             <!-- C.) PC userinfo container -->
             <div class="hidden pc:flex flex-col width-60 height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
-
+                <div class="width-full">
+                    <p class="text-sm weight-500">Me</p>
+                </div>
                 <div class="flex flex-row width-full height-full gap-1">
                     <div id="profile-table" class="flex width-18 height-18 background-white full-rounded-bg margin-top-3">
                         <img id="avatar-pc" src="images/Avatar.png" alt="" style="height: 100%; width: 100%; padding: 12%;" >

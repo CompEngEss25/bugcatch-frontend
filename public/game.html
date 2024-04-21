@@ -39,8 +39,8 @@
                         <p class="weight-700 text-black text-xxl">1</p>
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-lg weight-500">Tontoey</p>
-                        <p class="text-sm weight-300">5000</p>
+                        <p class = "top-player-name" class ="text-lg weight-500">-</p>
+                        <p class = "top-player-score" class="text-sm weight-300">-</p>
                     </div>
                 </div>
                 <div class="flex flex-row gap-3 width-full items-center height-20 background-gray rounded-bg padding-all-2">
@@ -48,8 +48,8 @@
                         <p class="weight-700 text-black text-xxl">2</p>
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-lg weight-500">Del</p>
-                        <p class="text-sm weight-300">3000</p>
+                        <p class = "top-player-name" class ="text-lg weight-500">-</p>
+                        <p class = "top-player-score" class="text-sm weight-300">-</p>
                     </div>
                 </div>
                 <div class="flex flex-row gap-3 width-full items-center height-20 background-gray rounded-bg padding-all-2">
@@ -57,8 +57,8 @@
                         <p class="weight-700 text-black text-xxl">3</p>
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-lg weight-500">Krit</p>
-                        <p class="text-sm weight-300">1000</p>
+                        <p class = "top-player-name" class ="text-lg weight-500">-</p>
+                        <p class = "top-player-score" class="text-sm weight-300">-</p>
                     </div>
                 </div>
 
@@ -106,27 +106,27 @@
                             <div class="flex height-8 width-8 background-gold full-rounded-bg items-center justify-center">
                                 <p class="weight-700 text-black text-lg">1</p>
                             </div>
-                            <div class="flex flex-row flex-wrap gap-1">
-                                <p class="text-sm weight-500">Tontoey</p>
-                                <p class="text-sm weight-300">5000</p>
+                            <div class="flex flex-col flex-wrap gap-1">
+                                <p class = "top-player-name" class="text-sm weight-500">-</p>
+                                <p class = "top-player-score" class="text-sm weight-300">-</p>
                             </div>
                         </div>
                         <div class="flex flex-row gap-3 width-full items-center height-fit background-gray rounded-bg padding-all-2">
                             <div class="flex height-8 width-8 background-silver full-rounded-bg items-center justify-center">
                                 <p class="weight-700 text-black text-lg">2</p>
                             </div>
-                            <div class="flex flex-row flex-wrap gap-1">
-                                <p class="text-sm weight-500">Tontoey</p>
-                                <p class="text-sm weight-300">5000</p>
+                            <div class="flex flex-col flex-wrap gap-1">
+                                <p class = "top-player-name" class="text-sm weight-500">-</p>
+                                <p class = "top-player-score" class="text-sm weight-300">-</p>
                             </div>
                         </div>
                         <div class="flex flex-row gap-3 width-full items-center height-fit background-gray rounded-bg padding-all-2">
                             <div class="flex height-8 width-8 background-bronze full-rounded-bg items-center justify-center">
                                 <p class="weight-700 text-black text-lg">3</p>
                             </div>
-                            <div class="flex flex-row flex-wrap gap-1">
-                                <p class="text-sm weight-500">Tontoey</p>
-                                <p class="text-sm weight-300">5000</p>
+                            <div class="flex flex-col flex-wrap gap-1">
+                                <p class = "top-player-name" class="text-sm weight-500">-</p>
+                                <p class = "top-player-score" class="text-sm weight-300">-</p>
                             </div>
                         </div>
                         
@@ -202,14 +202,14 @@
     <script type="module">
 
 
-        import { getUsername, getCurrentAvatarImg, getHighScore} from "/script/main.js";
+        import { getUsername, getCurrentAvatarImg, getHighScore,fetchAndDrawLeaderboard} from "/script/main.js";
         // import { startGame } from "/script/game.js";
 
         window.getUsername = getUsername;
         window.getCurrentAvatarImg = getCurrentAvatarImg;
         // window.startGame = startGame;
         window.getHighScore = getHighScore;
-
+        fetchAndDrawLeaderboard()
 
         
 

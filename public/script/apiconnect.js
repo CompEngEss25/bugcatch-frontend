@@ -30,7 +30,8 @@ export async function createNewResult(playerId, score){
 }
 
 export async function getLeaderboard(){
-  await fetch(`http://127.0.0.1:3222/players/leaderboard`).then((r) => r.json());
+  let players = await fetch(`http://127.0.0.1:3222/players/leaderboard`).then((r) => r.json());
+  return players
 }
 
 export async function setNewHighScore(name, newHigh){

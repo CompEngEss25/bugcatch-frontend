@@ -77,9 +77,9 @@ function getRandomY(){
 function getRandomR(){
     return Math.floor(Math.random()*360);
 }
-function relocate(clickedBug) {
-    clickedBug.setPosition(getRandomX(), getRandomY());
-    clickedBug.angle = getRandomR();
+function relocate(bug) {
+    bug.setPosition(getRandomX(), getRandomY());
+    bug.angle = getRandomR();
 }
 
 //spawn bug
@@ -128,11 +128,13 @@ function spawnBug(){
 //on click event
 function clickOnNormalBug(bug){
     score += 100;
-    relocate(bug);
+    setBugInvisible(bug);
+    spawnBug();
 }
 function clickOnUnnormalBug(bug){
     score += 150;
-    relocate(bug);
+    setBugInvisible(bug);
+    spawnBug();
 }
 function clickOnBug(bug){
     switch(mode){
@@ -156,6 +158,7 @@ function clickOnBug(bug){
             clickOnNormalBug(bug);
             mode = 0;
     }
+    console.log(bugCount);
 }
 function clickOnBg(){
     score -= 40;
@@ -196,7 +199,6 @@ function clickOnShrink(){
     gameScene.fatc.setScale(bugScale.fatc/2);
     gameScene.ladybug.setScale(bugScale.ladybug/2);
 
-
     //back to normal
     let t = setTimeout(backToNormal, 5000);
 }
@@ -210,7 +212,6 @@ function backToNormal(){
     gameScene.dragonfly.setScale(bugScale.dragonfly);
     gameScene.fatc.setScale(bugScale.fatc);
     gameScene.ladybug.setScale(bugScale.ladybug);
-
 
 }
 

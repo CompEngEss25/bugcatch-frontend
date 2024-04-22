@@ -347,7 +347,7 @@ function preload() {
     this.load.image('bg', 'images/assets/transparent.png');
 
     //items
-    this.load.image('mysBox', 'images/MysteryBox.png');
+    this.load.image('mysBox', 'images/assets/MysteryBox.png');
 
     //bugs
     this.load.image('ant', 'images/insects/ant.png');

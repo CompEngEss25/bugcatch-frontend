@@ -286,15 +286,15 @@ function create() {
 
 
     //set the score text----------------------------------------------------------------
-    this.scoreTxt = this.add.text(0.7*sizes.width, 10, 'Score : 0', {
-        font: `${sizes.height*0.03}px Arial`,
+    this.scoreTxt = this.add.text(0.03*sizes.width, 10, 'Score : 0', {
+        font: `${sizes.height*0.05}px Arial`,
         fill: '#000000'
     });
 
 
     //set the timer of the game---------------------------------------------------------
-    this.timerTxt = this.add.text(0.7*sizes.width, 35, `Time : 200`, {
-        font: `${sizes.height*0.03}px Arial`,
+    this.timerTxt = this.add.text(0.03*sizes.width, 50, `Time : 200`, {
+        font: `${sizes.height*0.05}px Arial`,
         fill: '#000000'
     });
 

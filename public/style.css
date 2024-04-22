@@ -39,6 +39,7 @@ GOOD LUCK !
 
 
 @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Assistant:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 /* Explanation: Importing font from Google Font. We'll use Anuphan font for our project */
 
 
@@ -62,7 +63,7 @@ h1,h2,h3 {
 
 
 body {
-    background-image: url("images/background.png");
+    background-image: url("images/background.jpg");
 }
 
 body, html {
@@ -91,6 +92,12 @@ td{
 #leaderboard-container-mobile tr:nth-child(even):not(:nth-child(2)) {
     background-color: #f2f2f2;
 }
+
+.font-luckiest {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 
 /* Phaser Game Container */
@@ -559,6 +566,9 @@ Please don't add/modify this section to maintain consistency _/\_ */
 }
 .text-xxl {
     font-size: 1.875rem;
+}
+.text-3xl {
+    font-size: 3rem;
 }
 
 

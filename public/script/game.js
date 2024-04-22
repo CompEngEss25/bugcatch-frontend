@@ -38,7 +38,7 @@ let config = {
           game.canvas.style.height = '100%';
         }
       },
-    backgroundColor: '#e2e8ff' // color of scene background
+    backgroundColor: '#FFFFFF' // color of scene background
 }
 
 //game variable
@@ -222,8 +222,9 @@ function gameOver(){
     if (score > getHighScore()){
         setNewHighScore(getUsername(), score);
         setHighScore(score);
-        window.location.href = "game.html";
     }
+    window.location.href = "game.html";
+
 
     
 }

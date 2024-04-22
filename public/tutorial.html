@@ -8,7 +8,7 @@
 </head>
 <body onload=GotoFirstPage()>
 
-    <main class="flex flex-col width-full height-full background-gray padding-all-5 items-center">
+    <main class="flex flex-col width-full height-full padding-all-5 items-center">
 
         <script>
             let previousPage = null;
@@ -74,23 +74,23 @@
         <div class="flex flex-row width-full items-center justify-center gap-5">
 
 
-            <div class="flex flex-col width-80 tablet:width-180 height-80 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
+            <div class="flex flex-col width-80 tablet:width-180 height-90 tablet:height-40 background-white margin-top-5 rounded-bg border shadow padding-all-3">
                 <p class="text-lg weight-700">Gameplay Tutorial</p>
-                <div id="first-page" class="flex flex-col background-gray width-full height-full margin-top-3 padding-all-5" style="display: none;">
+                <div id="first-page" class="flex flex-col width-full height-full margin-top-3 padding-all-5" style="display: none;">
                     <p class="text-xl weight-500 text-center">Welcome to "BugCatch"!</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">A fun and engaging web game where you aim to catch as many bugs as you can within the specified time to accumulate points and climb the leaderboard.</p>
                 </div>
-                <div id="second-page" class="flex flex-col background-gray width-full height-full margin-top-3 padding-all-5" style="display: none;">
+                <div id="second-page" class="flex flex-col width-full height-full margin-top-3 padding-all-5" style="display: none;">
                     <p class="text-xl weight-500 text-center">Introduce a "Login page"</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">Username: This is the primary field for users to input their unique username. Since the username is the main identifier for accumulating scores</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">Avatar Profile: This field allows users to select an avatar profile image. </p>
                 </div>
-                <div id="third-page" class="flex flex-col background-gray width-full height-full margin-top-3 padding-all-5" style="display: none;">
+                <div id="third-page" class="flex flex-col width-full height-full margin-top-3 padding-all-5" style="display: none;">
                     <p class="text-xl weight-500 text-center">Introduce a "Gameplay"</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">Gameplay: The primary objective is to catch as many bugs as possible within the specified time. Use your mouse or touchscreen to interact with the game.</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">Score Tracking: As you catch bugs, your score will increase. Keep an eye on your score as you aim to reach new high scores and compete with other players.</p>
                 </div>
-                <div id="fourth-page" class="flex flex-col background-gray width-full height-full margin-top-3 padding-all-5" style="display: none;">
+                <div id="fourth-page" class="flex flex-col width-full height-full margin-top-3 padding-all-5" style="display: none;">
                     <p class="text-xl weight-500 text-center">Introduce a "Leaderboard"</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">Player Rankings: View the rankings of other players based on their scores.</p>
                     <p class="text-sm tablet:text-lg weight-300 text-center margin-top-5">Your Position: See where you stand in the rankings compared to other players.</p>
@@ -101,11 +101,11 @@
 
         </div>
 
-        <div class="flex flex-row width-40 tablet:width-60 height-10 background-white margin-top-5">
-            <button class="width-10 tablet:width-15 height-10 background-white border" onclick=GotoFirstPage()>1</button>
-            <button class="width-10 tablet:width-15 height-10 background-white border" onclick=GotoSecondPage()>2</button>
-            <button class="width-10 tablet:width-15 height-10 background-white border" onclick=GotoThirdPage()>3</button>
-            <button class="width-10 tablet:width-15 height-10 background-white border" onclick=GotoFourthPage()>4</button>
+        <div class="flex flex-row width-40 tablet:width-60 height-10 gap-1 margin-top-5">
+            <div style="cursor: pointer" class="flex flex-col items-center justify-center shadow width-10 tablet:width-15 height-10 background-white border rounded-bg" onclick=GotoFirstPage()>1</div>
+            <div style="cursor: pointer" class="flex flex-col items-center justify-center shadow width-10 tablet:width-15 height-10 background-white border rounded-bg" onclick=GotoSecondPage()>2</div>
+            <div style="cursor: pointer" class="flex flex-col items-center justify-center shadow width-10 tablet:width-15 height-10 background-white border rounded-bg" onclick=GotoThirdPage()>3</div>
+            <div style="cursor: pointer" class="flex flex-col items-center justify-center shadow width-10 tablet:width-15 height-10 background-white border rounded-bg" onclick=GotoFourthPage()>4</div>
         </div>
         
     

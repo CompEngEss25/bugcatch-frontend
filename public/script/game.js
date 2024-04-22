@@ -324,13 +324,13 @@ function checkBugNearEdge(bug){
 }
 
 //gameOver
-function gameOver(){
+async function gameOver(){
     // If new high score is achieved, save it do the database
     // Then for any cases, add game results
     console.log("Game ended !");
     if (score > getHighScore()){
-        setNewHighScore(getUsername(), score);
-        setHighScore(score);
+        await setNewHighScore(getUsername(), score);
+        await setHighScore(score);
     }
     window.location.href = "game.html";
 

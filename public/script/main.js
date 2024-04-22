@@ -130,7 +130,8 @@ function drawLeaderBoard(players){
             //create rank container
             let rankBox = document.createElement("div")
             rankBox.classList.add("flex",    "height-16",    "width-16",  "full-rounded-bg",    "items-center",    "justify-center")
-            let n = players.indexOf(player)+1
+            let n = players.indexOf(player)+1;
+            let textColor = "text-white";
             switch (n) {
                 case 1:
                     rankBox.classList.add("background-gold");
@@ -142,12 +143,13 @@ function drawLeaderBoard(players){
                     rankBox.classList.add("background-bronze");
                     break;
                 default:
-                    rankBox.classList.add("background-white")
+                    rankBox.classList.add("background-crystal")
+                    textColor = "text-black";
                     break;
             }
             //create rank number
             let rankNumber = document.createElement("p")
-            rankNumber.classList.add("weight-700",    "text-black",    "text-xxl")
+            rankNumber.classList.add("weight-700", "text-xxl", textColor)
             rankNumber.textContent = n
             //merge with rank box
             rankBox.appendChild(rankNumber)

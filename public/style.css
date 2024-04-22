@@ -483,13 +483,19 @@ Feel free to add colors of your choices ;D*/
 }
 
 .background-gold{
-    background-color: #f6ed3c;
+    background-image: linear-gradient(to right, #fde68a, #eab308);
 }
 .background-silver{
-    background-color: #b5f8f0;
+    background-image: linear-gradient(to right, #cbd5e1, #64748b);
 }
 .background-bronze{
-    background-color: #e69c1e;
+    background-image: linear-gradient(to right,#fb923c, #b45309); 
+}
+
+.background-crystal {
+    background-image: linear-gradient(to right,#ddd6fe, #fbcfe8); 
+
+
 }
 
 .background-orange {

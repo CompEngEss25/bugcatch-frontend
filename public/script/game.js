@@ -293,7 +293,7 @@ function create() {
 
 
     //set the timer of the game---------------------------------------------------------
-    this.timerTxt = this.add.text(0.03*sizes.width, 50, `Time : 200`, {
+    this.timerTxt = this.add.text(0.03*sizes.width, 50, `Time : 120`, {
         font: `${sizes.height*0.05}px Arial`,
         fill: '#000000'
     });

@@ -327,10 +327,11 @@ function checkBugNearEdge(bug){
 async function gameOver(){
     // If new high score is achieved, save it do the database
     // Then for any cases, add game results
+    const endGame = score;
     console.log("Game ended !");
-    if (score > getHighScore()){
-        await setNewHighScore(getUsername(), score);
-        await setHighScore(score);
+    if (endGame > getHighScore()){
+        await setNewHighScore(getUsername(), endGame);
+        await setHighScore(endGame);
     }
     window.location.href = "game.html";
 
